@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "1177304d-ba33-4d09-a79e-781e0d9d0d97",
+		"name": "node.js-elasticsearch",
+		"description": "API doc for node.js elastic search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15142208"
+	},
+	"item": [
+		{
+			"name": "Indices",
+			"item": [
+				{
+					"name": "New Index creation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "indexName",
+									"value": "blog",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/indices/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"indices",
+								"new"
+							]
+						},
+						"description": "New index creation process route"
+					},
+					"response": [
+						{
+							"name": "successful request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "indexName",
+											"value": "blog",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/indices/new",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"indices",
+										"new"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-gROu4uXnY2LXi7OIuLA7lp8o2xw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 15:58:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"message\": \"index had been created successfully\"\n}"
+						},
+						{
+							"name": "Duplicated index name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "indexName",
+											"value": "blog",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/indices/new",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"indices",
+										"new"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-Y8YTVjbmwniHNtq6m/rHXnmXLdw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 15:59:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"success\": false,\n    \"message\": \"duplicated index name\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve all indexes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/indices/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"indices",
+								"list"
+							]
+						},
+						"description": "All indexes retrieve process route"
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/indices/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"indices",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-/+6PNn5Q+Np5DqVrYt3BJDyCyD0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 16:00:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"request ended successfully\",\n    \"data\": {\n        \"indices\": [\n            \"blog\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "index removal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/indices/remove/:indexName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"indices",
+								"remove",
+								":indexName"
+							],
+							"variable": [
+								{
+									"key": "indexName",
+									"value": "blog"
+								}
+							]
+						},
+						"description": "Index removal process route"
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/indices/remove/:indexName",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"indices",
+										"remove",
+										":indexName"
+									],
+									"variable": [
+										{
+											"key": "indexName",
+											"value": "blog"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-+kglcshUwysPdulVMe5NkxFsAyU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 16:02:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"index has been removed successfully\"\n}"
+						},
+						{
+							"name": "Index  not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/indices/remove/:indexName",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"indices",
+										"remove",
+										":indexName"
+									],
+									"variable": [
+										{
+											"key": "indexName",
+											"value": "blog"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-P79o+WC0Mt1rk4Wf6C9Nwk+qIsY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 16:04:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"success\": false,\n    \"message\": \"index was not found\"\n}"
+						}
+					]
+				}
+			],
+			"description": "routes related to the elastic search indices"
+		}
+	]
+}
