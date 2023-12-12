@@ -1,14 +1,13 @@
 /** import express module */
 const express = require('express');
+/** initialize dotenv module */
+require('dotenv').config();
 /** import express ejs layout module */
 const expressEjsLayout = require("express-ejs-layouts");
 /** import path module */
 const path = require("path");
 /** import main router file */
 const {mainRouter} = require("./router/router");
-
-/** initialize dotenv module */
-require('dotenv').config();
 
 /** create application instants */
 const app = express();
