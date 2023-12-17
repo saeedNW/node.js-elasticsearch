@@ -399,6 +399,1197 @@
 				}
 			],
 			"description": "routes related to the elastic search indices"
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "New blog creation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "What is Node.js",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Saeed Norouzi",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/blogs/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"new"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "What is Node.js",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Saeed Norouzi",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/new",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"new"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-iaz6myBEXkPUGGehMTjyhEBquUY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Dec 2023 17:33:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"message\": \"blog had been created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve all blogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3001/blogs/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"list",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Retrieve all blogs no query",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/list/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"list",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "601"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"259-LeXrGUTxdGDv/pnH1cFTFPHQrBk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:51:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"request ended successfully\",\n    \"data\": {\n        \"blogs\": [\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"epUOX4wBD6gK5fjVnh7i\",\n                \"_score\": 1,\n                \"_source\": {\n                    \"title\": \"What is Node.js\",\n                    \"text\": \"Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            },\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"e5UXX4wBD6gK5fjVSx6X\",\n                \"_score\": 1,\n                \"_source\": {\n                    \"title\": \"What is Node.js\",\n                    \"text\": \"Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Retrieve all blogs with query",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/list/:value",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"list",
+										":value"
+									],
+									"variable": [
+										{
+											"key": "value",
+											"value": "what"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "619"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26b-CUN/ZQEHVu08/RXtXHYJtRcZ0lc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:51:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"request ended successfully\",\n    \"data\": {\n        \"blogs\": [\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"epUOX4wBD6gK5fjVnh7i\",\n                \"_score\": 0.18232156,\n                \"_source\": {\n                    \"title\": \"What is Node.js\",\n                    \"text\": \"Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            },\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"e5UXX4wBD6gK5fjVSx6X\",\n                \"_score\": 0.18232156,\n                \"_source\": {\n                    \"title\": \"What is Node.js\",\n                    \"text\": \"Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Blog removal process",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/blogs/remove/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"remove",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/blogs/remove/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"remove",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "e5UXX4wBD6gK5fjVSx6X"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-rEj+34J64KuBORiQJTRS4LLjPds\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 07:05:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"post has been removed successfully\"\n}"
+						},
+						{
+							"name": "Server internal error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/blogs/remove/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"remove",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "e5UXX4wBD6gK5fjVSx6X"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NR/QF9fbM902OOoFK+i3ay7L0kE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 07:05:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"success\": false,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Blog update process with index",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/blogs/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Node.js",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Saeed Norouzi",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "this is an update request by node.js + elastic search",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/update/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"update",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "NKcNd4wBOB4VPeEuyBUb"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-wR9aaqy8UgS8brSkogNVvKP0zM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 09:44:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"post has been updated successfully\"\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Node.js",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Saeed Norouzi",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "this is an update request by node.js + elastic search",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/update/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"update",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "NKcNd4wBOB4VPeEuyBU"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NR/QF9fbM902OOoFK+i3ay7L0kE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 09:45:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"success\": false,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Blog update process with update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/blogs/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Node.js",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Saeed Norouzi",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "this is an update request by node.js + elastic search",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/update/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"update",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "NKcNd4wBOB4VPeEuyBUb"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-wR9aaqy8UgS8brSkogNVvKP0zM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 09:44:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"post has been updated successfully\"\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Node.js",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Saeed Norouzi",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "this is an update request by node.js + elastic search",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/blogs/update/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"update",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "NKcNd4wBOB4VPeEuyBU"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NR/QF9fbM902OOoFK+i3ay7L0kE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 09:45:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"success\": false,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find post by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/blogs/findByTitle?title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"findByTitle"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/blogs/findByTitle?title=node",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"findByTitle"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "node"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "270"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10e-4NeT4HNMqU/qw9Fxlkkyegxlnwo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 10:23:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"requested successfully\",\n    \"data\": {\n        \"post\": [\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBU\",\n                \"_score\": 0.5754429,\n                \"_source\": {\n                    \"title\": \"what is Node\",\n                    \"author\": \"Saeed Norouzi\",\n                    \"text\": \"this is an update request by node.js + elastic search\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "find post by multiply fields",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/blogs/multi-fields?search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"multi-fields"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/blogs/multi-fields?search=saeed",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"multi-fields"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "saeed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "457"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c9-1EZsbWLkH74Tdkix2ul/bx7tCZs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 10:25:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"requested successfully\",\n    \"data\": {\n        \"posts\": [\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBUb\",\n                \"_score\": 0.18232156,\n                \"_source\": {\n                    \"title\": \"Node.js\",\n                    \"text\": \"this is an update request by node.js + elastic search\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            },\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBU\",\n                \"_score\": 0.18232156,\n                \"_source\": {\n                    \"title\": \"what is Node\",\n                    \"author\": \"Saeed Norouzi\",\n                    \"text\": \"this is an update request by node.js + elastic search\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "find post by regexp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/blogs/regexp-search?search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"regexp-search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/blogs/regexp-search?search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"regexp-search"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "439"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b7-hM0U2nCgup0FzDljJ4QIZ578iVk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 10:30:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"requested successfully\",\n    \"data\": {\n        \"posts\": [\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBUb\",\n                \"_score\": 1,\n                \"_source\": {\n                    \"title\": \"Node.js\",\n                    \"text\": \"this is an update request by node.js + elastic search\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            },\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBU\",\n                \"_score\": 1,\n                \"_source\": {\n                    \"title\": \"what is Node\",\n                    \"author\": \"Saeed Norouzi\",\n                    \"text\": \"this is an update request by node.js + elastic search\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "find post by multiply fields and regexp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/blogs/findBlogByMultiField?search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"blogs",
+								"findBlogByMultiField"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/blogs/findBlogByMultiField?search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"blogs",
+										"findBlogByMultiField"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "439"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b7-XywL6iuG4LKmYFzR7rlYYpwIHsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Dec 2023 10:32:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"requested successfully\",\n    \"data\": {\n        \"posts\": [\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBUb\",\n                \"_score\": 3,\n                \"_source\": {\n                    \"title\": \"Node.js\",\n                    \"text\": \"this is an update request by node.js + elastic search\",\n                    \"author\": \"Saeed Norouzi\"\n                }\n            },\n            {\n                \"_index\": \"blog\",\n                \"_id\": \"NKcNd4wBOB4VPeEuyBU\",\n                \"_score\": 3,\n                \"_source\": {\n                    \"title\": \"what is Node\",\n                    \"author\": \"Saeed Norouzi\",\n                    \"text\": \"this is an update request by node.js + elastic search\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	]
 }
