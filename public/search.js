@@ -14,10 +14,10 @@ input.addEventListener("keyup", async function() {
     const search = this.value;
 
     // Fetch data from the server based on the search value
-    const result = await (await fetch(`/blog/findBlogByMultifield?search=${search}`)).json();
+    const result = await (await fetch(`/blogs/findBlogByMultiField?search=${search}`)).json();
 
     // Loop through the result and create a list item for each blog
-    for (const blog of result) {
+    for (const blog of result.data.posts) {
         // Create a new list item element
         const item = document.createElement("li");
 
